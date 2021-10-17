@@ -28,12 +28,16 @@ def main():
     with open('./config.json', 'r') as f:
         data = json.load(f)
 
+    if (not data['cfToken']):
+        print("No Cloudflare API token defined in config.json")
+        sys.exit(1)
+
     headers = {
         'Authorization': 'Bearer {}'.format(data['cfToken'])
     }
     res = requestCloudflare(headers, "/client/v4/zones/")
 
-    if (len(res) != 1):
+    if (len(res) == 1):
         data['zoneID'] = res[0]['id']
     else:
         print("\n Zones:")
