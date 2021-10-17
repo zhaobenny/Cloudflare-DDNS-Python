@@ -1,0 +1,7 @@
+{
+    "cfToken":"Cloudflare API token with Zone read and DNS edit prems",
+    "zoneID":"Run get-ids.py to populate or manually fill the rest",
+    "recordID":"",
+    "name":"",
+    "type":""
+}
