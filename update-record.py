@@ -4,7 +4,7 @@ def main():
     with open('./config.json', 'r') as f:
         data = json.load(f)
 
-    conn = http.client.HTTPSConnection("api64.ipify.org")
+    conn = http.client.HTTPSConnection("api.ipify.org")
     try:
         conn.request("GET", "/")
         res = conn.getresponse()
